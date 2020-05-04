@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>Page Title</title>
+        <style>
+        	*{
+    padding:0;
+    margin:0;
+}
+
+body{
+    
+}
+.header h1, h2{
+    color:white;
+    text-align:center ;
+    font-family:times new roman;
+    
+}
+.header {
+    background:#FF009F;
+    position:relative ;
+    bottom:20px;
+}
+h1{
+    position:relative ;
+    top:15px;
+}
+.form{
+    box-shadow:5, 10, 5, 10 rgba(0, 0, 4, 5) ;
+    background-color:#f9f9f9;
+}
+.form, .form-control{
+    position:relative ;
+    left:9px;
+    width:95%;
+}
+.btn btn-block {
+    width:95%;
+}
+        	</style>
+        <script>
+function php(){
+        
+        
+    var a = document.getElementById("fname").value;
+    var b = document.getElementById("lname").value;
+    var c = document.getElementById("uname").value;
+    var d = document.getElementById("num").value;
+    var e = document.getElementById("email").value;
+    var f = document.getElementById("psw").value;
+    var g = document.getElementById("cpsw").value;
+    if (a == "") {
+        document.getElementById("finame").innerHTML = "//please enter your firstname";
+        finame.style.color="red";
+        
+        return false;
+        
+    }else{
+        finame.innerHTML = "//OK";
+        finame.style.color = "green"
+    }
+    
+       if (b == "") {
+        document.getElementById("laname").innerHTML = "//please enter your lastname";
+        laname.style.color="red";
+        return false;
+        }else{
+            laname.innerHTML = "//OK";
+            laname.style.color ="green"
+        }
+    
+           if (c == "") {
+        document.getElementById("usname").innerHTML = "//please enter your username, this is very important";
+        usname.style.color="red";
+        return false;
+        }else{
+            usname.innerHTML = "//OK";
+            usname.style.color ="green"
+        }
+        
+            if (d == "") {
+        document.getElementById("no").innerHTML = "//please enter your phone Number,this is very important";
+        no.style.color="red";
+        return false;
+        }else{
+            no.innerHTML = "//OK";
+            no.style.color ="green"
+        }
+            if (e == "") {
+        document.getElementById("inbox").innerHTML = "//please enter your email adress";
+        inbox.style.color="red";
+        return false;
+        }else{
+            inbox.innerHTML = "//OK";
+            inbox.style.color ="green"
+        }
+        
+            if (f == "") {
+        document.getElementById("password").innerHTML = "//please enter your strong password";
+        password.style.color="red";
+        return false;
+        }else{
+            password.innerHTML = "//OK";
+            password.style.color ="green"
+        }
+        
+              if (f.length <= 7) {
+              ccc.style.color="red"
+  document.getElementById("ccc").innerHTML = "//password lenght must be greater or equal to 8digit ";
+  return false;
+  
+  }
+        if (f != g) {
+        document.getElementById("ccc").innerHTML = "//passwords do not match";
+        ccc.style.color="red";
+        return false;    
+        }
+         if (f.lenght <= 6) {
+              document.getElementById("ccc").innerHTML = "//password must  be greater than 6";
+              return false;
+        } else if (f.search(/[A-Z]/)== -1) {
+            document.getElementById("ccc").innerHTML = "//At least one upper case should be included";
+        ccc.style.color="red";
+        return false;    
+        } else if (f.search(/[0-9]/)== -1) {
+       document.getElementById("ccc").innerHTML = "//a number must be included in your password";
+       return false ;
+        }else if (f.search(/[+\-\'\!\_\(\)\:\&\#\*\"\;\?\@\/\[\]\»\€\$)]/)== -1) {
+        ccc.style.color="red"
+       document.getElementById("ccc").innerHTML = "//include a special symbol in your password, symbols like ¥,¢,₦,ĺ,ñ,¿,‰ etc are not allowed";
+       return false ;
+        }
+          
+        
+  
+     }
+        </script>
+    </head>
+    <body>
+       <div class="header">
+           <h1>ip chart</h1>
+           <h2>create account</h2>
+        
+       </div>
+       <div class="form">
+           <form onsubmit="return php()">
+              <input type="text" class="form-control" placeholder="your firstname..." id="fname"><span id="finame"></span><br />
+              <input type="text" class="form-control" placeholder="your lastname..." id="lname"><span id="laname"></span><br />
+              <input type="text" class="form-control" placeholder="your username..." id="uname"><span id="usname"></span><br /> 
+             <input type="number" class="form-control" placeholder="your phone number..." id="num"><span id="no"></span><br />  
+             <input type="email" class="form-control" placeholder="your email adress..." id="email"><span id="inbox"></span><br />  
+            <input type="password" class="form-control" placeholder="enter a strong password" id="psw"><span id="password"></span><br />
+             <input type="password" class="form-control" placeholder="confirm password" id="cpsw"><span id="ccc"></span><br />
+           <a href="" > <input type="submit" class="btn btn-block"></a>
+           </form>
+       </div>
+       
+    </body>
+</html>
